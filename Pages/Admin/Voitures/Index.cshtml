@@ -35,32 +35,39 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Voiture) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImgUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Prix)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Annee)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Marque)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Modele)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Finition)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.VoitureID">Modifier</a> |
-                <a asp-page="./Details" asp-route-id="@item.VoitureID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.VoitureID">Supprimer</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Voiture)
+        {
+            <tr>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.ImgUrl))
+                    {
+                        <img src="@item.ImgUrl" alt="Image de la voiture" width="100" height="75" />
+                    }
+                    else
+                    {
+                        <span>Aucune image disponible</span>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prix)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Annee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Marque)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modele)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Finition)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.VoitureID">Modifier</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.VoitureID">Supprimer</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

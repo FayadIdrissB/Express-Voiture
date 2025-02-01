@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Express_Voiture.Data;
 using Express_Voiture.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication;
 
 namespace Express_Voiture.Pages.Admin.Voitures
 {
+   [Authorize]
     public class IndexModel : PageModel
     {
         private readonly Express_Voiture.Data.DataContext _context;

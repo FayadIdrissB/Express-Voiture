@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Express_Voiture.Data;
 using Express_Voiture.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Express_Voiture.Pages.Admin.Voitures
 {
+    [Authorize]
     public class CreateModel : PageModel
     {
         private readonly Express_Voiture.Data.DataContext _context;

@@ -1,15 +1,27 @@
 ﻿
 using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace Express_Voiture.Models
 {
 	public class Voiture
 	{
 		public int VoitureID { get; set; }
-		public string ImgUrl { get; set; }
-		public float Prix { get; set; }
-		public DateOnly Annee { get; set; }
+        [Display(Name = "Image")]
+        public string ImgUrl { get; set; }
+
+        [Display(Name = "Prix (€)")]
+        public float Prix { get; set; }
+
+        [Display(Name = "Année")]
+        public DateOnly Annee { get; set; }
+
 		public string Marque { get; set; }
-		public string Modele { get; set; }
+
+        [Display(Name = "Modèle")]
+        public string Modele { get; set; }
+
+
 		public bool Finition { get; set; }
 	}
 }

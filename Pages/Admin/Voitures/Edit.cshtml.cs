@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Express_Voiture.Data;
 using Express_Voiture.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Express_Voiture.Pages.Admin.Voitures
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private readonly Express_Voiture.Data.DataContext _context;

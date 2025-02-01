@@ -1,0 +1,66 @@
+@page
+@model Express_Voiture.Pages.Admin.Voitures.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Interface Administration</h1>
+
+<p>
+    <a asp-page="Create">Nouvelle Voiture</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Voiture[0].ImgUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Voiture[0].Prix)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Voiture[0].Annee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Voiture[0].Marque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Voiture[0].Modele)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Voiture[0].Finition)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Voiture) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImgUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prix)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Annee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modele)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Finition)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.VoitureID">Modifier</a> |
+                <a asp-page="./Details" asp-route-id="@item.VoitureID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.VoitureID">Supprimer</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

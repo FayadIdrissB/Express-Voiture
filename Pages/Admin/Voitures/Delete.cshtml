@@ -1,0 +1,58 @@
+@page
+@model Express_Voiture.Pages.Admin.Voitures.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Supprimer</h1>
+
+<h3>êtes vous sur de vouloir supprimer cette voiture ? </h3>
+<div>
+    <h4>Voiture</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Voiture.ImgUrl)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Voiture.ImgUrl)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Voiture.Prix)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Voiture.Prix)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Voiture.Annee)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Voiture.Annee)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Voiture.Marque)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Voiture.Marque)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Voiture.Modele)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Voiture.Modele)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Voiture.Finition)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Voiture.Finition)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Voiture.VoitureID" />
+        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+        <a asp-page="./Index">Retour</a>
+    </form>
+</div>

@@ -1,0 +1,60 @@
+@page
+@model Express_Voiture.Pages.Admin.Voitures.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Modifier</h1>
+
+<h4>Voiture</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Voiture.VoitureID" />
+            <div class="form-group">
+                <label asp-for="Voiture.ImgUrl" class="control-label"></label>
+                <input asp-for="Voiture.ImgUrl" class="form-control" />
+                <span asp-validation-for="Voiture.ImgUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Voiture.Prix" class="control-label"></label>
+                <input asp-for="Voiture.Prix" class="form-control" />
+                <span asp-validation-for="Voiture.Prix" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Voiture.Annee" class="control-label"></label>
+                <input asp-for="Voiture.Annee" class="form-control" />
+                <span asp-validation-for="Voiture.Annee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Voiture.Marque" class="control-label"></label>
+                <input asp-for="Voiture.Marque" class="form-control" />
+                <span asp-validation-for="Voiture.Marque" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Voiture.Modele" class="control-label"></label>
+                <input asp-for="Voiture.Modele" class="form-control" />
+                <span asp-validation-for="Voiture.Modele" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Voiture.Finition" /> @Html.DisplayNameFor(model => model.Voiture.Finition)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Sauvegarder" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Retour</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
